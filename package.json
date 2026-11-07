@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": {"test": "node --test tests/core.test.mjs", "build": "node scripts/build.mjs", "start": "node scripts/serve.mjs"},
+  "scripts": {"test": "node --test tests/core.test.mjs", "test:rules": "firebase emulators:exec --only firestore --project demo-lumos \"node --test tests/firestore.test.mjs\"", "build": "node scripts/build.mjs", "start": "node scripts/serve.mjs"},
+  "devDependencies": {"firebase-tools":"15.35.0", "@firebase/rules-unit-testing":"6.0.0", "firebase":"13.2.0"},
   "engines": {"node": ">=22"}
 }
