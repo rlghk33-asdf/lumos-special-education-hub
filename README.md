@@ -44,4 +44,4 @@ API 키는 Firebase의 공개 클라이언트 식별자입니다. 데이터 보�
 
 ## 검증과 현재 제한
 
-`npm test`는 URL 안전성, 손상된 저장소 복구, 활동 이동, 날짜 및 일기 입력 검증을 확인합니다. Firebase 관리 계정 연결과 배포 전에는 실제 로그인·Firestore 접근 통제를 검증했다고 볼 수 없습니다. 보안 검토 내역은 `SECURITY-REVIEW.md`에 기록합니다.
+`npm test`는 URL 안전성, 손상된 저장소 복구, 활동 이동, 날짜 및 일기 입력 검증을 확인합니다. 운영 프로젝트에서 Google 로그인·일기 저장/수정/재조회·내보내기·로그아웃을 확인했습니다. Firestore emulator 보안 테스트 5건은 별도 GitHub Actions에서 통과했습니다. 보안 검토 내역은 `SECURITY-REVIEW.md`에 기록합니다.
