@@ -20,7 +20,7 @@ npm start
 
 ## Firebase 연결
 
-현재 `firebase-config.js`는 미설정 상태입니다. 설정 전에는 일기장 로그인·저장을 잠그고 연결 준비 중 안내를 표시합니다. 일정판과 허브는 그대로 사용 가능합니다.
+운영 프로젝트: `lumos-teacher-hub-rlghk33`. Google 로그인과 GitHub Pages 도메인 허용, 서울 리전 `asia-northeast3`의 기본 Firestore 및 보안 규칙을 배포했습니다. `firebase-config.js`에는 이 웹앱의 공개 클라이언트 식별자만 들어 있습니다. 프로젝트를 복제해 별도 운영할 경우 아래 절차로 본인의 Firebase에 연결하세요.
 
 1. 본인 Firebase 프로젝트를 만들고 Cloud Firestore Standard 데이터베이스를 선택합니다. 한국에서 사용할 경우 서울 위치 `asia-northeast3`를 검토하세요. 위치는 생성 후 변경하기 어렵습니다.
 2. Firebase 웹 앱을 등록하고 공개 클라이언트 설정 객체를 `firebase-config.js`에 넣습니다. `export const firebaseConfig = { apiKey, authDomain, projectId, appId, ... };` 형태입니다. 관리자 키나 서비스 계정 JSON을 넣으면 안 됩니다.
