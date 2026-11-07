@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="특수교육의 매일에 작은 마법을. 교사를 위한 시각 일정판, 개인 일기장과 수업 도구를 모은 루모스 특수교육 공방.">
+  <meta name="theme-color" content="#0c0e13">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com https://apis.google.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com https://www.gstatic.com; frame-src https://*.firebaseapp.com https://accounts.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <title>루모스 · 특수교육 공방</title>
+  <link rel="icon" href="./assets/emblem.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6Z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C8 2 3 3 2 4v15c3-2 7-1 10 1 3-2 7-3 10-1V4c-3-2-7-1-10 1Zm0 0v15"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9Z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Zm-4 9 3 3 5-6"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C5 2 1 11 6 17c6 5 15 1 14-14ZM4 21l11-11"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+  <a class="brand" href="#hub"><img src="./assets/emblem.svg" alt="" width="43" height="43"><span>LUMOS<small>특수교육 공방</small></span></a>
+  <div class="nav-label">나의 마법 서재</div>
+  <nav aria-label="주 메뉴">
+    <a href="#hub" data-nav="hub"><svg><use href="#i-grid"/></svg>공방 둘러보기<span class="nav-dot"></span></a>
+    <a href="#favorites" data-nav="favorites"><svg><use href="#i-star"/></svg>즐겨찾는 도구</a>
+    <a href="#schedule" data-nav="schedule"><svg><use href="#i-clock"/></svg>시각 일정판</a>
+    <a href="#diary" data-nav="diary"><svg><use href="#i-book"/></svg>교사의 일기장</a>
+  </nav>
+  <div class="side-note"><svg><use href="#i-spark"/></svg><p>작은 도구 하나가<br>아이의 하루를 바꿉니다.</p><span>ONE SMALL SPELL AT A TIME</span></div>
+  <div class="side-bottom"><span class="status-dot"></span>함께 자라는 공방<button class="text-button" id="privacy-side">이용·개인정보 안내 ↗</button></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><span class="breadcrumb">나의 마법 서재 <span>/</span> <strong id="breadcrumb">공방 둘러보기</strong></span><div class="top-actions"><span class="date-label" id="today"></span><button class="avatar" id="account-button" aria-label="일기장 계정 열기">L</button></div></header>
+<main id="main" tabindex="-1">
+<section id="hub-view" class="view">
+  <section class="hero">
+    <div class="hero-copy"><div class="eyebrow"><span></span> A LITTLE MAGIC FOR EVERY CLASSROOM</div><h1>모든 아이의 가능성에,<br>작은 <em>마법</em>을 더하다.</h1><p>선생님의 아이디어가 도구가 되는 곳.<br>특수교육의 매일을 돕는 나만의 웹앱 공방입니다.</p><a class="button primary" href="#tools">나의 도구 살펴보기 <svg><use href="#i-arrow"/></svg></a><span class="hero-foot">서로 다른 속도, 함께 빛나는 배움.</span></div>
+    <div class="hero-art" aria-hidden="true"><img src="./assets/magic-library.svg" alt="" width="520" height="370"></div>
+  </section>
+  <div class="overview"><div><svg><use href="#i-grid"/></svg><strong id="tool-count">2</strong><span>사용 가능한 도구</span></div><div><svg><use href="#i-star"/></svg><strong id="favorite-count">0</strong><span>즐겨찾는 도구</span></div><div><svg><use href="#i-leaf"/></svg><strong>작은 시작</strong><span>매일 조금씩 자라는 공방</span></div></div>
+  <section class="tools-section" id="tools"><div class="section-heading"><div><div class="eyebrow">THE TOOL COLLECTION</div><h2 id="collection-title">선생님의 도구 상자 <span>✦</span></h2><p>오늘의 수업에 필요한 작은 마법을 찾아보세요.</p></div><button id="add-tool" class="button secondary"><svg><use href="#i-plus"/></svg>도구 추가</button></div>
+  <div class="tool-controls"><div class="filters" role="group" aria-label="도구 분류"><button data-filter="all" class="selected">전체 도구</button><button data-filter="수업 도구">수업 도구</button><button data-filter="교사 기록">교사 기록</button><button data-filter="나의 도구">나의 도구</button></div><label class="search"><svg><use href="#i-search"/></svg><input id="search" type="search" placeholder="어떤 도구를 찾으세요?" aria-label="도구 검색"></label></div>
+  <div id="tool-grid" class="tool-grid"></div><p id="empty-tools" class="empty" hidden>아직 도구가 없습니다. 다른 검색어나 분류를 선택해 보세요.</p>
+  </section>
+  <div class="bottom-banner"><div class="banner-icon"><svg><use href="#i-spark"/></svg></div><div><h3>다음 마법은 선생님의 아이디어에서</h3><p>앞으로 만드는 웹앱도 이곳에 하나씩 모아보세요.</p></div><button id="add-tool-bottom" class="text-button">나의 웹앱 등록하기 <svg><use href="#i-arrow"/></svg></button></div>
+</section>
+<section id="schedule-view" class="view" hidden>
+  <a class="back" href="#hub">← 공방으로 돌아가기</a><div class="page-heading"><div class="eyebrow">A CLEARER DAY, ONE STEP AT A TIME</div><h1>하루를 여는 시각 일정판</h1><p>지금 할 일과 다음 할 일을 함께 보며, 편안하게 하루를 시작해요.</p></div>
+  <div class="notice"><svg><use href="#i-shield"/></svg><span>이 기기에만 저장됩니다. 학생 이름이나 개인정보는 적지 마세요.</span></div>
+  <section class="schedule-current" aria-live="polite"><span class="eyebrow">지금 할 활동</span><h2 id="current-activity">일정을 준비해 주세요</h2><p id="schedule-progress"></p></section>
+  <form id="activity-form" class="activity-form"><label>활동 이름<input id="activity-title" maxlength="40" required placeholder="예: 함께 책 읽기"></label><label>활동 그림<select id="activity-icon"><option value="book">책</option><option value="spark">놀이</option><option value="leaf">휴식</option><option value="clock">준비</option></select></label><button class="button primary" type="submit">활동 추가 <svg><use href="#i-plus"/></svg></button></form>
+  <div id="activity-list" class="activity-list"></div><div class="row-actions"><button id="reset-schedule" class="button secondary">완료 표시 초기화</button><button id="print-schedule" class="button secondary">일정판 인쇄</button><button id="clear-schedule" class="text-button danger">모든 활동 지우기</button></div>
+</section>
+<section id="diary-view" class="view" hidden>
+  <a class="back" href="#hub">← 공방으로 돌아가기</a><div class="page-heading"><div class="eyebrow">A QUIET PAGE, JUST FOR YOU</div><h1>교사의 일기장</h1><p>아이들과 함께한 하루, 선생님의 마음에도 한 줄의 여유를 남겨요.</p></div>
+  <div class="notice"><svg><use href="#i-shield"/></svg><span>나만 보는 교사 개인 기록입니다. 학생의 실명·진단·연락처 등 개인정보를 입력하지 마세요.</span></div>
+  <div id="auth-panel" class="auth-panel"><svg class="auth-book"><use href="#i-book"/></svg><h2>선생님만의 조용한 서재</h2><p id="auth-description">Google 계정으로 로그인하면 나의 기록을 저장하고 다른 기기에서도 이어 쓸 수 있어요.</p><button id="google-login" class="button primary">Google 계정으로 시작하기</button><p class="small muted">공유 기기에서는 사용 후 꼭 로그아웃해 주세요.</p></div>
+  <div id="diary-workspace" hidden><div class="diary-toolbar"><span id="account-name"></span><div><button id="export-diary" class="button secondary">전체 기록 내보내기</button><button id="logout" class="button secondary">로그아웃</button></div></div><div class="diary-layout"><aside class="entries-panel"><button id="new-entry" class="button primary">새 일기 쓰기 <svg><use href="#i-plus"/></svg></button><div id="entry-list"></div></aside><form id="diary-form" class="diary-editor"><div class="editor-top"><label>날짜<input id="entry-date" type="date" required></label><label>오늘의 마음<select id="entry-mood"><option value="calm">평온해요</option><option value="happy">기뻐요</option><option value="tired">쉬고 싶어요</option><option value="thoughtful">생각이 많아요</option></select></label></div><label>제목<input id="entry-title" maxlength="80" placeholder="오늘을 기억할 한 문장" required></label><label>오늘의 기록<textarea id="entry-body" rows="12" maxlength="10000" placeholder="오늘 발견한 작은 변화, 나에게 건네고 싶은 말…" required></textarea></label><div class="editor-bottom"><span id="body-count" class="small muted">0 / 10,000</span><div><button id="delete-entry" type="button" class="text-button danger" hidden>일기 삭제</button><button class="button primary" id="save-entry" type="submit">기록 저장하기</button></div></div><p class="small muted">저장 버튼을 눌러야 기록이 저장됩니다.</p></form></div></div>
+</section>
+<footer><span class="footer-brand">✧ LUMOS</span><p>모든 아이가 자신만의 빛으로 자라는 교실을 위해.</p><button id="privacy-footer" class="text-button">이용·개인정보 안내</button></footer>
+</main></div>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="tool-dialog"><form id="tool-form"><div class="dialog-heading"><h2>나의 도구 추가</h2><button type="button" class="close" data-close="tool-dialog" aria-label="닫기">×</button></div><p>직접 만든 웹앱을 이 브라우저의 공방에 모아보세요.</p><label>도구 이름<input id="custom-title" maxlength="40" required></label><label>한 줄 소개<input id="custom-description" maxlength="160" required></label><label>공개 HTTPS 주소<input id="custom-url" type="url" placeholder="https://…" required></label><p class="small muted">추가한 도구는 이 기기에만 저장됩니다. 외부 도구의 개인정보 처리방침은 별도로 확인해 주세요.</p><button class="button primary" type="submit">공방에 추가하기</button></form></dialog>
+<dialog id="privacy-dialog"><div class="dialog-heading"><h2>이용·개인정보 안내</h2><button class="close" data-close="privacy-dialog" aria-label="닫기">×</button></div><p>루모스는 교사용 수업 도구와 개인 성찰 기록을 위한 공방입니다.</p><h3>기기에 저장하는 정보</h3><p>시각 일정, 즐겨찾기, 직접 추가한 도구는 브라우저 저장소에 보관됩니다. 브라우저 데이터를 지우면 함께 삭제됩니다.</p><h3>일기장과 Google 로그인</h3><p>Google 로그인을 사용하면 Firebase Authentication이 계정 식별자와 기본 프로필을 처리합니다. 일기 날짜·제목·기분·본문은 연결된 Firebase 프로젝트의 Firestore에 저장되며 본인 계정만 접근하도록 설계했습니다. 일기 본문은 브라우저의 영구 저장소에 보관하지 않습니다. 로그인은 현재 브라우저 세션에서 유지됩니다.</p><h3>기록 관리</h3><p>일기는 직접 수정·삭제하거나 JSON으로 전체 내보내기할 수 있습니다. 내려받은 파일에는 일기 본문이 포함되므로 안전하게 보관하세요. 로그아웃하면 화면과 편집 중인 기록을 비웁니다.</p><h3>학생 개인정보를 기록하지 마세요</h3><p>학생의 실명, 장애·건강 정보, 연락처나 식별 가능한 관찰 자료를 위한 서비스가 아닙니다. 교사 자신의 수업 성찰만 기록해 주세요. 분석·광고 추적기는 사용하지 않습니다. 로그인 및 클라우드 기능은 Google/Firebase 서비스와 통신합니다.</p><p class="small muted">초기 버전 · 2026년 11월 7일. 클라우드 기능은 운영자의 Firebase 연결 후 사용할 수 있습니다.</p></dialog>
+</body></html>

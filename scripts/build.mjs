@@ -1,0 +1,10 @@
+import { mkdir, copyFile, cp, readdir, readFile } from 'node:fs/promises';
+import path from 'node:path';
+const output=path.resolve('dist');
+await mkdir(output,{recursive:true});
+for (const file of ['index.html','styles.css','app.mjs','core.mjs','firebase-client.mjs','firebase-config.js','.nojekyll']) await copyFile(file,path.join(output,file));
+await cp('assets',path.join(output,'assets'),{recursive:true});
+const files=await readdir(output);
+const html=await readFile(path.join(output,'index.html'),'utf8');
+for(const match of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) await readFile(path.join(output,match[1]));
+console.log(`Static build OK: ${files.length} top-level outputs. No credentials or source documents included.`);

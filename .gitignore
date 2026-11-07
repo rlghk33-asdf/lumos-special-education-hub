@@ -1,0 +1,13 @@
+node_modules/
+.tools/
+dist/
+.env*
+!.env.example
+.firebase/
+*-debug.log
+*.log
+.superpowers/
+registration-receipt.json
+service-account*.json
+*-adminsdk-*.json
+firebase-config.local.js
