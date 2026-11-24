@@ -4,6 +4,7 @@ const output=path.resolve('dist');
 await mkdir(output,{recursive:true});
 for (const file of ['index.html','styles.css','app.mjs','core.mjs','firebase-client.mjs','firebase-config.js','.nojekyll']) await copyFile(file,path.join(output,file));
 await cp('assets',path.join(output,'assets'),{recursive:true});
+await cp('games',path.join(output,'games'),{recursive:true});
 const files=await readdir(output);
 const html=await readFile(path.join(output,'index.html'),'utf8');
 for(const match of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) await readFile(path.join(output,match[1]));

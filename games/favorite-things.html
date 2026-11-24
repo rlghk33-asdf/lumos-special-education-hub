@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5faf7">
+  <meta name="description" content="내 번호를 고르고 좋아하는 음식, 장난감, 사람을 골라요. 여섯 친구의 선택을 함께 보는 놀이.">
+  <title>내가 좋아하는 것! 음식 · 장난감 · 사람</title>
+  <style>
+:root{--ink:#233c35;--muted:#596f65;--green:#23694c;--orange:#d44b24;--line:#dfe9e2;--bg:#f5faf7;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;font-size:18px;line-height:1.6}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer;color:inherit}button:focus-visible,a:focus-visible{outline:4px solid #2165c2;outline-offset:5px}button{transition:background .15s,transform .15s,border-color .15s}button:active{transform:scale(.98)}.topbar{max-width:1240px;margin:auto;padding:24px 38px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink);font-weight:800;font-size:20px}.brand-mark{display:grid;place-items:center;width:42px;height:42px;background:var(--green);color:#fff;border-radius:14px 14px 14px 4px;font-size:23px}.utility{background:white;border:1px solid var(--line);padding:10px 17px;border-radius:30px;font-size:15px;min-height:46px;font-weight:700}.utility span{margin-right:5px}.utility[aria-pressed=true]{background:#e1efe5;border-color:var(--green)}main{max-width:1110px;margin:10px auto 0;padding:0 30px}.intro{text-align:center;margin:22px auto 30px}.eyebrow{font-size:15px;font-weight:800;color:var(--green);letter-spacing:.09em;margin:0 0 8px}h1{font-size:clamp(32px,4vw,48px);letter-spacing:-.055em;line-height:1.3;margin:0 0 12px;font-weight:900}h1 span{color:var(--orange)}.lead{color:var(--muted);margin:0;font-size:20px}.steps{display:flex;justify-content:center;align-items:center;gap:18px;margin:0 auto 26px;font-size:16px;font-weight:800;color:#69796f}.steps span{display:flex;align-items:center;gap:8px}.steps b{border-radius:50%;width:30px;height:30px;background:#e4ece6;display:grid;place-items:center;font-size:15px}.steps .active{color:var(--green)}.steps .active b{background:var(--green);color:white}.steps i{height:1px;width:45px;background:#cbdacf}.game-panel{background:white;border:1px solid var(--line);box-shadow:0 8px 30px #1f493208;border-radius:28px;padding:32px 40px 34px;min-height:350px}.panel-heading{text-align:center;margin-bottom:26px}.panel-heading h2{font-size:28px;letter-spacing:-.045em;line-height:1.4;margin:0 0 8px}.panel-heading p{font-size:17px;color:var(--muted);margin:0}.heading-badge{display:inline-flex;background:#eaf2ed;color:var(--green);padding:4px 14px;border-radius:30px;font-size:15px;margin-bottom:10px;font-weight:800}.student-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.student{display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid #e2eae4;background:white;border-radius:20px;min-height:164px;padding:18px 8px;gap:8px}.student:hover{border-color:var(--green);background:#f6faf7}.student .number{font-size:44px;line-height:1.2;font-weight:900;color:var(--green)}.student small{font-size:14px;color:var(--muted)}.student.done{border-color:#97b6a4;background:#f0f7f2}.student.done .number{font-size:24px}.student .mini-food{height:48px;width:62px}.student .food-name{font-size:16px;font-weight:800}.panel-bottom{display:flex;justify-content:center;margin-top:24px;gap:12px;align-items:center;flex-wrap:wrap}.primary,.secondary{border:0;border-radius:14px;min-height:56px;padding:12px 28px;font-weight:800;font-size:19px}.primary{background:var(--green);color:#fff;box-shadow:0 3px 0 #184a36}.primary:hover{background:#19583e}.primary:disabled{background:#e3e9e5;color:#64756a;box-shadow:none;cursor:default}.secondary{background:#f0f4f1;border:1px solid var(--line)}.food-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.food{border:2px solid #e4e9e3;background:white;border-radius:18px;padding:10px 6px 13px;position:relative;min-height:145px}.food:hover{border-color:#91aa98}.food.selected{border:3px solid var(--green);background:#f1f8f2;padding:9px 5px 12px}.food .illustration{height:90px;width:100%;max-width:135px;display:block;margin:auto}.food strong{font-size:21px;letter-spacing:-.04em}.check{position:absolute;right:8px;top:8px;background:var(--green);color:#fff;border-radius:50%;font-size:15px;line-height:26px;width:26px;height:26px;display:none}.selected .check{display:block}.food-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.food-toolbar .panel-heading{margin:0;text-align:left}.food-toolbar h2{font-size:26px}.text-button{background:none;border:0;min-height:44px;text-decoration:underline;text-underline-offset:4px;color:var(--muted);font-size:15px;padding:8px}.selection-hint{color:var(--muted);font-size:17px}.progress-area{max-width:700px;margin:24px auto 0}.progress-label{display:flex;justify-content:space-between;gap:15px;font-size:15px;color:var(--muted);margin-bottom:8px}.progress-label strong{color:var(--green);white-space:nowrap}.progress-track{height:9px;background:#e1ebe3;border-radius:8px;overflow:hidden}#progress-fill{height:100%;background:#5e9974;transition:width .25s;width:0}.teacher-tip{text-align:center;font-size:15px;color:var(--muted);margin:16px 0 0}footer{display:flex;justify-content:space-between;align-items:center;max-width:1110px;padding:24px 30px;margin:auto;color:var(--muted);font-size:14px}.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.result-card{border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;align-items:center;gap:14px;background:#fbfdfb}.result-card svg{width:85px;height:78px;flex-shrink:0}.result-card p{margin:0;font-size:16px;color:var(--muted)}.result-card strong{font-size:24px}.result-number{display:inline-block;font-weight:800;color:var(--green);font-size:17px}.result-change{display:block;font-size:14px;min-height:44px;border:none;background:none;color:var(--muted);text-decoration:underline;padding:6px 0}.success-mark{display:block;margin:0 auto 14px;border-radius:50%;background:#e6f2e9;color:var(--green);width:50px;height:50px;line-height:50px;font-size:25px}dialog{border:1px solid var(--line);border-radius:24px;padding:30px;max-width:calc(100% - 32px);color:var(--ink)}dialog::backdrop{background:#19372c66}dialog h2{margin:0 0 12px}.dialog-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(min-width:1200px){main{margin-top:20px}.intro{margin-bottom:34px}.game-panel{padding-top:36px;padding-bottom:36px}}@media(max-width:800px){.student-grid{grid-template-columns:repeat(3,1fr)}.student{min-height:130px}.game-panel{padding:25px}.food-grid{grid-template-columns:repeat(3,1fr)}.results-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){body{font-size:17px}.topbar{padding:16px}.brand{font-size:16px;gap:6px}.brand-mark{width:34px;height:34px;font-size:20px}.utility{font-size:13px;padding:8px 10px}main{padding:0 14px}.intro{margin:16px 0 24px}.eyebrow{font-size:13px}.lead{font-size:17px}.steps{gap:7px;font-size:12px;margin-bottom:20px}.steps span{gap:4px}.steps b{width:23px;height:23px;font-size:12px}.steps i{width:12px}.game-panel{padding:24px 16px;border-radius:22px}.panel-heading h2{font-size:24px}.panel-heading p{font-size:16px}.student-grid{gap:9px}.student{min-height:125px;border-radius:16px}.student .number{font-size:36px}.student small{font-size:13px}.food-grid{grid-template-columns:repeat(2,1fr);gap:10px}.food-toolbar{align-items:flex-start}.food-toolbar h2{font-size:23px}.food-toolbar .text-button{font-size:13px;white-space:nowrap}.food strong{font-size:20px}.results-grid{grid-template-columns:1fr}.result-card{padding:12px 16px;gap:20px}.result-change{display:inline-block;margin-left:14px}.panel-bottom{gap:12px}.panel-bottom .primary{width:100%}.selection-hint{font-size:16px}footer{padding:18px 16px;gap:10px;font-size:12px}footer .text-button{font-size:13px}.teacher-tip{font-size:13px}.progress-label{font-size:13px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}@media print{.topbar,.steps,footer,.progress-area,.panel-bottom,.result-change{display:none}.game-panel{box-shadow:none;border:0}.results-grid{grid-template-columns:repeat(2,1fr)}body{background:white}}
+/* Three choice categories and combined student results. */
+.brand-mark{font-size:17px;letter-spacing:-.08em}
+.category-nav{display:flex;gap:12px;margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.category-tab{flex:1;min-height:52px;padding:10px 12px;border:2px solid var(--line);border-radius:14px;background:white;font-size:18px;font-weight:800;color:var(--muted)}
+.category-tab.current{background:#eaf3ed;border-color:var(--green);color:var(--green)}
+.category-tab>span:first-child{font-size:15px;margin-right:5px}
+.student-status{font-size:15px;font-weight:800;color:var(--green)}
+.student-result{border:1px solid var(--line);border-radius:20px;background:#fbfdfb;padding:14px 16px;break-inside:avoid}
+.student-result h3{font-size:21px;color:var(--green);margin:0 0 8px;padding:0 0 8px;border-bottom:1px solid var(--line)}
+.result-row{display:flex;align-items:center;gap:10px;min-height:86px}
+.result-row+.result-row{border-top:1px solid #edf1ed}
+.result-row .result-art{width:64px;height:62px;flex-shrink:0}
+.result-row>div{min-width:0;flex:1}
+.result-label{display:block;color:var(--muted);font-size:13px}
+.result-row strong{display:block;font-size:20px;letter-spacing:-.04em;line-height:1.45;overflow-wrap:anywhere}
+.result-row .result-change{flex-shrink:0;font-size:13px;margin:0}
+@media(max-width:1050px) and (min-width:801px){.results-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.brand-mark{font-size:14px}.category-nav{gap:8px;margin-bottom:20px;padding-bottom:16px}.category-tab{font-size:16px;min-height:50px;padding:9px 4px}.category-tab>span:first-child{font-size:13px;margin-right:2px}.student-status{font-size:13px}.student small{font-size:11px}.student-result{padding:12px 16px}.result-row{min-height:82px}.result-row .result-art{width:70px;height:66px}.result-label{font-size:14px}.result-row strong{font-size:23px}.result-row .result-change{font-size:14px}}
+@media print{.result-change,.category-nav{display:none}.student-result{background:white}.results-grid{grid-template-columns:repeat(2,1fr);gap:10px}.student-result h3{font-size:17px}.result-row{min-height:65px}.result-row strong{font-size:18px}.intro{margin:0 0 14px}.intro h1{font-size:28px}.intro .eyebrow{display:none}.result-row .result-art{width:50px;height:48px}.game-panel{padding:0}}
+
+</style>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="" aria-label="좋아하는 것 고르기 홈"><span class="brand-mark" aria-hidden="true">좋아</span> 좋아하는 것 고르기</a><button class="sound utility" id="sound" aria-pressed="false"><span aria-hidden="true">♫</span> 읽어주기 꺼짐</button></header>
+  <main id="main">
+    <div class="intro"><p class="eyebrow">함께 고르는 즐거운 시간</p><h1>내가 좋아하는 <span>것!</span></h1><p class="lead">음식 · 장난감 · 사람, 하나씩 골라요.</p></div>
+    <nav class="steps" aria-label="놀이 순서"><span id="step1" class="active"><b>1</b> 내 번호 고르기</span><i aria-hidden="true"></i><span id="step2"><b>2</b> 세 가지 고르기</span><i aria-hidden="true"></i><span id="step3"><b>3</b> 함께 보기</span></nav>
+    <section class="game-panel" id="panel" aria-labelledby="screen-title"></section>
+    <div class="progress-area"><div class="progress-label"><span id="progress-text">음식 · 장난감 · 사람을 하나씩 골라요</span><strong><span id="count">0</span> / 6명</strong></div><div class="progress-track" role="progressbar" aria-label="세 가지 선택을 마친 친구 수" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><div id="progress-fill"></div></div><p class="teacher-tip">천천히 골라도 괜찮아요. 친구와 같은 것을 골라도 좋아요.</p></div>
+  </main>
+  <footer><span>서로 다른 마음, 모두 좋아요!</span><button class="text-button" id="reset">처음부터 다시 하기</button></footer>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">다시 시작할까요?</h2><p>친구들이 고른 음식, 장난감, 사람이 모두 지워져요.</p><div class="dialog-actions"><button class="secondary" id="cancel-reset">계속 놀이하기</button><button class="primary" id="confirm-reset">다시 시작</button></div></dialog>
+  <script>
+(function(){
+const foods = [
+  {id:'gimbap',name:'김밥',color:'#eef3e4',emoji:'🍙'},
+  {id:'tteok',name:'떡볶이',color:'#fff0e9',emoji:'🍢'},
+  {id:'chicken',name:'치킨',color:'#fff5df',emoji:'🍗'},
+  {id:'pizza',name:'피자',color:'#fff0dc',emoji:'🍕'},
+  {id:'burger',name:'햄버거',color:'#eff2ff',emoji:'🍔'},
+  {id:'noodles',name:'짜장면',color:'#f5ece6',emoji:'🍜'},
+  {id:'cutlet',name:'돈가스',color:'#fff5e5',emoji:'🍛'},
+  {id:'dumpling',name:'만두',color:'#edf5ee',emoji:'🥟'},
+  {id:'icecream',name:'아이스크림',color:'#faedf5',emoji:'🍦'},
+  {id:'strawberry',name:'딸기',color:'#ffedf0',emoji:'🍓'}
+];
+const toys = [
+  {id:'car',name:'자동차',color:'#eaf2ff'},
+  {id:'dinosaur',name:'공룡',color:'#eaf5e6'},
+  {id:'doll',name:'인형',color:'#fbeaf1'},
+  {id:'blocks',name:'블록',color:'#fff1db'},
+  {id:'ball',name:'공',color:'#e7f5f2'},
+  {id:'robot',name:'로봇',color:'#eaf0fc'},
+  {id:'train',name:'기차',color:'#fff0e5'},
+  {id:'puzzle',name:'퍼즐',color:'#f2edfc'},
+  {id:'bubbles',name:'비눗방울',color:'#e7f7fb'},
+  {id:'clay',name:'클레이',color:'#ffedf0'}
+];
+const people = [
+  {id:'mother',name:'어머니',color:'#fcecf0'},
+  {id:'father',name:'아버지',color:'#e9f0fc'},
+  {id:'teacher',name:'선생님',color:'#eaf5ec'},
+  {id:'grandmother',name:'할머니',color:'#f4ecfa'},
+  {id:'grandfather',name:'할아버지',color:'#eaf3f5'},
+  {id:'brother',name:'형 · 오빠',color:'#fff1dd'},
+  {id:'sister',name:'누나 · 언니',color:'#fceef7'},
+  {id:'sibling',name:'동생',color:'#edf5e6'},
+  {id:'friend',name:'친구',color:'#eaf3fd'},
+  {id:'me',name:'나',color:'#fff4dc'}
+];
+const categories = [
+  {id:'food',name:'음식',question:'어떤 음식이 좋아요?',items:foods},
+  {id:'toy',name:'장난감',question:'어떤 장난감이 좋아요?',items:toys},
+  {id:'person',name:'사람',question:'누가 좋아요?',items:people}
+];
+const emptyAnswer = () => ({food:null,toy:null,person:null});
+const valid = (category,id) => categories.find(c=>c.id===category)?.items.some(item=>item.id===id) ?? false;
+function choose(answers, student, category, item) {
+  if(!Number.isInteger(student)||student<0||student>5||!valid(category,item)) throw new Error('Invalid choice');
+  return answers.map((answer,i)=>i===student?{...answer,[category]:item}:answer);
+}
+const isStudentComplete = answer => !!answer&&categories.every(c=>valid(c.id,answer[c.id]));
+const isComplete = answers => Array.isArray(answers)&&answers.length===6&&answers.every(isStudentComplete);
+function restore(raw) {
+  try {
+    const parsed=JSON.parse(raw);
+    if(Array.isArray(parsed)&&parsed.length===6) return parsed.map(entry=>{
+      const answer=emptyAnswer();
+      if(typeof entry==='string'){if(valid('food',entry))answer.food=entry;}
+      else if(entry&&typeof entry==='object') for(const c of categories) if(valid(c.id,entry[c.id]))answer[c.id]=entry[c.id];
+      return answer;
+    });
+  } catch {}
+  return Array.from({length:6},emptyAnswer);
+}
+
+const face=(hair,shirt,extra='',long=false)=>`<path d="M25 90q0-31 35-31t35 31" fill="${shirt}"/>${long?`<path d="M30 61V39q0-29 30-29t30 29v31" fill="${hair}"/>`:''}<circle cx="60" cy="40" r="25" fill="#f3ceaa"/><path d="M35 36q-5-31 25-29t25 29q-12-5-20-17-10 14-30 17" fill="${hair}"/><circle cx="50" cy="42" r="2.3" fill="#3c3e38"/><circle cx="70" cy="42" r="2.3" fill="#3c3e38"/><path d="M53 53q7 7 14 0" fill="none" stroke="#a76654" stroke-width="2.5" stroke-linecap="round"/>${extra}`;
+const glasses='<g fill="none" stroke="#655d65" stroke-width="2"><circle cx="49" cy="42" r="8"/><circle cx="71" cy="42" r="8"/><path d="M57 42h6"/></g>';
+const extraArt={
+car:'<path d="M20 51h12l13-23h31l15 23h11v23H20Z" fill="#5799c5"/><path d="M47 34h10v17H37zm16 0h10l11 17H63z" fill="#dceff9"/><circle cx="37" cy="74" r="11" fill="#3b4c5e"/><circle cx="87" cy="74" r="11" fill="#3b4c5e"/><g fill="#e9e8dc"><circle cx="37" cy="74" r="5"/><circle cx="87" cy="74" r="5"/></g><path d="M22 56h10v6H22z" fill="#fff0ae"/>',
+dinosaur:'<path d="M22 57L14 40l26 10c22-14 31-2 39-15V22q17-14 27 3v22H88v24H76V61H53v15H41V61Z" fill="#68a06a"/><path d="M39 46l7-15 10 12 9-17 10 12" fill="#dcaa4e"/><circle cx="96" cy="26" r="3" fill="#243d32"/><path d="M92 39h13" stroke="#365f40" stroke-width="2"/><path d="M49 52q14-7 24 0" stroke="#91bd79" stroke-width="8" fill="none"/>',
+doll:'<circle cx="35" cy="23" r="12" fill="#aa774f"/><circle cx="85" cy="23" r="12" fill="#aa774f"/><ellipse cx="60" cy="65" rx="25" ry="25" fill="#bb8c64"/><circle cx="60" cy="35" r="27" fill="#bb8c64"/><ellipse cx="60" cy="44" rx="14" ry="10" fill="#eed2ad"/><circle cx="49" cy="32" r="3" fill="#4a3d36"/><circle cx="71" cy="32" r="3" fill="#4a3d36"/><ellipse cx="60" cy="40" rx="5" ry="4" fill="#4a3d36"/><path d="M60 43v7m-7-2q7 6 14 0" fill="none" stroke="#4a3d36" stroke-width="2"/><ellipse cx="33" cy="65" rx="11" ry="17" fill="#bb8c64"/><ellipse cx="87" cy="65" rx="11" ry="17" fill="#bb8c64"/><ellipse cx="43" cy="84" rx="13" ry="10" fill="#aa774f"/><ellipse cx="77" cy="84" rx="13" ry="10" fill="#aa774f"/><path d="M43 56l17 7-17 7zm34 0-17 7 17 7z" fill="#cc6378"/>',
+blocks:'<rect x="17" y="52" width="39" height="29" rx="4" fill="#d7725c"/><rect x="59" y="52" width="42" height="29" rx="4" fill="#5b9cab"/><rect x="39" y="21" width="42" height="29" rx="4" fill="#e4b74d"/><g fill="#b95848"><rect x="23" y="46" width="11" height="8" rx="2"/><rect x="40" y="46" width="11" height="8" rx="2"/></g><g fill="#4e8792"><rect x="65" y="46" width="11" height="8" rx="2"/><rect x="82" y="46" width="11" height="8" rx="2"/></g><g fill="#cba13b"><rect x="45" y="15" width="11" height="8" rx="2"/><rect x="63" y="15" width="11" height="8" rx="2"/></g>',
+ball:'<circle cx="60" cy="51" r="36" fill="#f7f5e9" stroke="#6e9c86" stroke-width="2"/><path d="M60 34l16 12-6 18H50l-6-18Z" fill="#518d74"/><path d="M60 15v19M25 41l19 5m-6 33 12-15m33 15L70 64m25-23-19 5" stroke="#518d74" stroke-width="3"/><path d="M35 25l8 4-13 13-6-1m61-16-8 4 13 13 6-1M42 82l-1-11-11-1m48 12 1-11 11-1" fill="#518d74"/>',
+robot:'<path d="M60 18V9" stroke="#6d82a3" stroke-width="4"/><circle cx="60" cy="8" r="5" fill="#d98763"/><rect x="32" y="20" width="56" height="33" rx="8" fill="#839bbf"/><rect x="39" y="29" width="42" height="16" rx="5" fill="#e7f6ed"/><circle cx="49" cy="36" r="4" fill="#385c68"/><circle cx="71" cy="36" r="4" fill="#385c68"/><rect x="36" y="57" width="48" height="27" rx="5" fill="#839bbf"/><circle cx="60" cy="70" r="7" fill="#e6b958"/><path d="M25 61v18m70-18v18M46 84v9m28-9v9" stroke="#6d82a3" stroke-width="10" stroke-linecap="round"/>',
+train:'<path d="M21 47h45v30H21z" fill="#d77c57"/><rect x="65" y="28" width="33" height="49" rx="4" fill="#5b9692"/><path d="M61 25h41" stroke="#497c79" stroke-width="7" stroke-linecap="round"/><rect x="72" y="35" width="18" height="18" rx="3" fill="#e1f3e9"/><path d="M29 47V31h15v16" fill="#bd5e41"/><circle cx="37" cy="19" r="7" fill="#e2e1d7"/><circle cx="48" cy="10" r="5" fill="#e2e1d7"/><g fill="#444f60" stroke="#e5bc61" stroke-width="4"><circle cx="34" cy="78" r="10"/><circle cx="60" cy="78" r="10"/><circle cx="86" cy="78" r="10"/></g>',
+puzzle:'<path d="M21 20h35v13q13-9 14 3t-14 5v13H43q9 13-3 14t-6-14H21Z" fill="#8b86bf"/><path d="M62 20h35v34H84q8 13-3 14t-6-14H62V43q14 4 14-8T62 29Z" fill="#dab257"/><path d="M21 60h9q-2 14 12 14t7-14h7v25H21Z" fill="#6ba792"/><path d="M62 60h9q-2 14 11 14t9-14h6v25H62Z" fill="#d88c9e"/>',
+bubbles:'<rect x="27" y="56" width="28" height="34" rx="6" fill="#8cb9bc"/><rect x="30" y="51" width="22" height="10" rx="3" fill="#6a989d"/><path d="M57 57L72 39" stroke="#b8a165" stroke-width="5"/><circle cx="78" cy="30" r="12" fill="none" stroke="#b8a165" stroke-width="4"/><g fill="#e6f6fa" fill-opacity=".7" stroke="#7cb7cd" stroke-width="2"><circle cx="41" cy="26" r="15"/><circle cx="96" cy="13" r="8"/><circle cx="94" cy="65" r="17"/></g><path d="M33 23q1-5 6-5m47 46q1-6 7-7" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>',
+clay:'<path d="M21 67q-3-22 15-22t18 15q18-23 36-8t8 24H25" fill="#db8e9f"/><path d="M47 44q-7-16 7-23t21 6q9 15-9 18Z" fill="#8eaf89"/><path d="M26 75q24 11 67 0" stroke="#bc7084" stroke-width="4" fill="none"/><ellipse cx="87" cy="32" rx="11" ry="8" fill="#dfb855"/><path d="M23 21l13 15" stroke="#8c93bd" stroke-width="8" stroke-linecap="round"/>',
+mother:face('#705344','#cd798d','',true),
+father:face('#514d48','#6292b5'),
+teacher:face('#725846','#6e9c7d',glasses+'<path d="M82 65l20 2v24H82Z" fill="#dcbb67"/><path d="M86 73h12m-12 6h12" stroke="#fff9e6" stroke-width="2"/>',true),
+grandmother:face('#b0aba9','#9984ad',glasses+'<circle cx="60" cy="10" r="10" fill="#b0aba9"/>',true),
+grandfather:face('#a6aaa9','#79989a',glasses+'<path d="M49 56q11-8 22 0" stroke="#a6aaa9" stroke-width="4" fill="none"/>'),
+brother:face('#605248','#d5a258','<path d="M32 25q28-30 56 0" fill="#7097aa"/>'),
+sister:face('#705344','#b67f9e','<path d="M28 25l12 5-12 5m24-10-12 5 12 5" fill="#dcad56"/>',true),
+sibling:face('#7e6046','#89aa71','<path d="M50 10q10-11 18 0" stroke="#7e6046" stroke-width="4" fill="none"/>'),
+friend:face('#5f5147','#779cc6','<path d="M31 80l-9-10m68 10 9-10" stroke="#f3ceaa" stroke-width="11" stroke-linecap="round"/>'),
+me:face('#6c5846','#d5ae58','<path d="M60 73c-9-10-20 3 0 14 20-11 9-24 0-14" fill="#c56872"/>')
+};
+
+const $=id=>document.getElementById(id);
+const key='nyam-food-game-v1';
+let answers=restore(null),student=null,selected=null,sound=false,categoryIndex=0;
+try{answers=restore(localStorage.getItem(key));}catch{}
+let screen=isComplete(answers)?'results':'numbers';
+const drawings={
+gimbap:'<g transform="rotate(-12 60 50)"><ellipse cx="60" cy="75" rx="41" ry="9" fill="#c4d3b5"/><rect x="19" y="35" width="82" height="30" rx="13" fill="#29493c"/><ellipse cx="36" cy="48" rx="17" ry="20" fill="#fffef3" stroke="#29493c" stroke-width="5"/><ellipse cx="36" cy="48" rx="9" ry="11" fill="#edaf42"/><path d="M30 43h7v7h-7z" fill="#e97242"/><path d="M37 49h6v8h-6z" fill="#4d8f4d"/><ellipse cx="78" cy="48" rx="17" ry="20" fill="#fffef3" stroke="#29493c" stroke-width="5"/><ellipse cx="78" cy="48" rx="9" ry="11" fill="#edaf42"/><path d="M72 43h7v7h-7z" fill="#e97242"/><path d="M79 49h6v8h-6z" fill="#4d8f4d"/></g>',
+tteok:'<path d="M15 53h90L92 79H28Z" fill="#e5b7a0"/><ellipse cx="60" cy="53" rx="45" ry="18" fill="#bb3829"/><g fill="#f88547" stroke="#cb4829" stroke-width="2"><rect x="29" y="38" width="14" height="29" rx="6" transform="rotate(-23 35 50)"/><rect x="48" y="33" width="14" height="31" rx="6" transform="rotate(25 55 50)"/><rect x="70" y="37" width="14" height="30" rx="6" transform="rotate(40 77 50)"/></g><g fill="#42884d"><rect x="39" y="35" width="5" height="8" transform="rotate(-30 40 40)"/><rect x="66" y="50" width="5" height="8" transform="rotate(40 68 54)"/></g>',
+chicken:'<ellipse cx="60" cy="77" rx="44" ry="8" fill="#e7d5ac"/><path d="M76 39L91 24M86 21l8 9" stroke="#fffcf0" stroke-width="12" stroke-linecap="round"/><path d="M73 36c-20-14-35-1-42 11-12 18 1 32 19 29 15-2 26-10 30-24 2-7-1-12-7-16" fill="#c97a28" stroke="#ad5d1d" stroke-width="3"/><path d="M38 52l6-5m9-5 6 2m-8 15 8 3m8-9 3-6" stroke="#efb458" stroke-width="4" stroke-linecap="round"/>',
+pizza:'<ellipse cx="60" cy="80" rx="40" ry="6" fill="#e9d3b5"/><path d="M21 30L92 38 56 82Z" fill="#f6c95b" stroke="#c17b35" stroke-width="3"/><path d="M23 30Q60 15 94 37" fill="none" stroke="#d89b4e" stroke-width="12" stroke-linecap="round"/><g fill="#d9563f"><circle cx="43" cy="41" r="7"/><circle cx="74" cy="44" r="7"/><circle cx="56" cy="64" r="6"/></g><path d="M57 40l6 5m-24 12 6 3m23-4 4 4" stroke="#539450" stroke-width="4" stroke-linecap="round"/>',
+burger:'<ellipse cx="60" cy="81" rx="42" ry="6" fill="#d5d6e9"/><path d="M22 43c0-37 76-37 76 0" fill="#e7a64c"/><path d="M21 43h78v10H21z" fill="#5f9c50"/><path d="M24 53h72v12H24z" fill="#73442e"/><path d="M21 53l31 10 25-10" fill="#f5cb45"/><path d="M23 68h74c0 15-74 15-74 0" fill="#dfa04d"/><path d="M25 64h70" stroke="#db6550" stroke-width="6" stroke-linecap="round"/><g stroke="#fff0bd" stroke-width="3" stroke-linecap="round"><path d="M41 26l3 2m15-7 3 2m15 5 3 2m-25 5 3 2"/></g>',
+noodles:'<path d="M17 49h86C98 94 23 94 17 49" fill="#719eab"/><ellipse cx="60" cy="49" rx="43" ry="18" fill="#fdf5de"/><ellipse cx="60" cy="49" rx="35" ry="13" fill="#4b3024"/><path d="M30 45q14-15 28 0t28 0M32 53q14-15 28 0t28 0" fill="none" stroke="#81583a" stroke-width="4"/><path d="M55 39l8 12m1-13 7 10m-22-6 9 12" stroke="#85a257" stroke-width="3"/><path d="M79 32l21-22m-14 25 22-21" stroke="#a87847" stroke-width="4" stroke-linecap="round"/>',
+cutlet:'<ellipse cx="60" cy="57" rx="48" ry="29" fill="#fff" stroke="#e1d8be" stroke-width="3"/><path d="M23 51c-4-23 54-25 55 0s-49 26-55 0" fill="#cf913f" stroke="#b17a32" stroke-width="2"/><path d="M27 47q22 14 46-2" fill="none" stroke="#775039" stroke-width="6"/><path d="M38 35l-4 29m17-30-3 31m16-30-4 28" stroke="#f3c474" stroke-width="3"/><path d="M78 51q-5-18 8-18t11 18" fill="#edf0d7"/><path d="M79 62l13-6m-12 11 15-5" stroke="#84a654" stroke-width="4"/>',
+dumpling:'<ellipse cx="60" cy="76" rx="45" ry="10" fill="#cadccc"/><path d="M18 58q18-49 43 0c-7 22-37 22-43 0" fill="#fff8e6" stroke="#d4bc8c" stroke-width="2"/><path d="M57 58q21-49 45 0c-8 23-38 23-45 0" fill="#fff8e6" stroke="#d4bc8c" stroke-width="2"/><path d="M25 51l7 8m0-17 6 12m2-15 4 13m20 0 8 8m-1-19 6 13m2-14 4 13" stroke="#ddc99f" stroke-width="3" stroke-linecap="round"/>',
+icecream:'<path d="M42 53h37L61 91Z" fill="#d6a05b"/><path d="M47 60l20 17m-16-8 12 10m8-19-16 15" stroke="#be8746" stroke-width="2"/><path d="M38 52c-9-11 1-19 9-21-6-9 8-16 13-23 1 12 18 11 14 25 15 4 15 19 4 23Z" fill="#fffaf0" stroke="#decbb8" stroke-width="2"/><path d="M49 33q11 6 25 0M43 47q19 7 36-2" stroke="#edbdca" stroke-width="5" stroke-linecap="round"/>',
+strawberry:'<ellipse cx="60" cy="82" rx="32" ry="6" fill="#eed0d7"/><path d="M29 41c-1-23 25-22 31-15 12-11 36-5 32 17-3 21-23 39-32 41-10-3-28-22-31-43" fill="#df5361"/><path d="M60 32L39 19l15 1 6-14 7 14 16-2-13 16" fill="#5b9455"/><path d="M43 40l2 4m15-6 1 4m16-2-2 4M42 53l2 4m16-5 1 4m14-3-2 4m-20 9 2 4m11-6-1 4" stroke="#ffe1a1" stroke-width="3" stroke-linecap="round"/>'
+};
+function art(item,cls='illustration'){return `<svg class="${cls}" viewBox="0 0 120 100" aria-hidden="true"><ellipse cx="60" cy="52" rx="54" ry="43" fill="${item.color}"/>${drawings[item.id]??extraArt[item.id]}</svg>`;}
+function itemFor(category,id){return categories.find(c=>c.id===category).items.find(item=>item.id===id);}
+function save(){try{localStorage.setItem(key,JSON.stringify(answers));}catch{}}
+function say(text){$('announcement').textContent=text;if(sound&&'speechSynthesis'in window){speechSynthesis.cancel();const speech=new SpeechSynthesisUtterance(text);speech.lang='ko-KR';speech.rate=.85;speechSynthesis.speak(speech);}}
+function pickedCount(answer){return categories.filter(c=>answer[c.id]).length;}
+function startCategory(index){categoryIndex=index;selected=answers[student][categories[index].id];screen='choice';render(true);say(`${student+1}번 친구, ${categories[index].question}`);}
+function render(focus=false){
+  const count=answers.filter(isStudentComplete).length;
+  $('count').textContent=count;$('progress-fill').style.width=`${count/6*100}%`;
+  document.querySelector('[role=progressbar]').setAttribute('aria-valuenow',count);
+  $('progress-text').textContent=count===6?'모든 친구가 세 가지를 골랐어요!':count?`${count}명의 친구가 세 가지를 골랐어요`:'음식 · 장난감 · 사람을 하나씩 골라요';
+  const activeStep=screen==='numbers'?1:screen==='choice'?2:3;
+  [1,2,3].forEach(n=>{$(`step${n}`).classList.toggle('active',n===activeStep);if(n===activeStep)$(`step${n}`).setAttribute('aria-current','step');else $(`step${n}`).removeAttribute('aria-current');});
+  if(screen==='numbers'){
+    $('panel').innerHTML=`<div class="panel-heading"><h2 id="screen-title" tabindex="-1">나는 몇 번인가요?</h2><p>내 번호를 누르고, 좋아하는 세 가지를 골라요.</p></div><div class="student-grid">${answers.map((answer,i)=>{
+      const complete=isStudentComplete(answer),picked=pickedCount(answer);
+      return `<button class="student ${complete?'done':''}" data-student="${i}" aria-label="${i+1}번, ${complete?'선택 완료, 바꾸기':picked?`${picked}가지 선택, 이어 고르기`:'좋아하는 것 고르기'}"><span class="number">${i+1}<span style="font-size:.5em">번</span></span><span class="student-status">${complete?'세 가지 선택 완료 ✓':picked?`${picked} / 3 선택했어요`:'좋아하는 것 고르기'}</span>${picked?`<small>${categories.filter(c=>answer[c.id]).map(c=>c.name).join(' · ')}</small>`:'<small>음식 · 장난감 · 사람</small>'}</button>`;
+    }).join('')}</div>${count===6?'<div class="panel-bottom"><button class="primary" id="show-results">모두의 선택 보기</button></div>':''}`;
+  }else if(screen==='choice'){
+    const category=categories[categoryIndex];
+    $('panel').innerHTML=`<div class="category-nav" aria-label="고를 종류">${categories.map((c,i)=>`<button class="category-tab ${i===categoryIndex?'current':''}" data-category="${i}" ${i===categoryIndex?'aria-current="step"':''}><span>${i+1}</span> ${c.name}${answers[student][c.id]?' <span aria-label="선택 완료">✓</span>':''}</button>`).join('')}</div><div class="food-toolbar"><div class="panel-heading"><span class="heading-badge">${student+1}번 친구 · ${categoryIndex+1} / 3</span><h2 id="screen-title" tabindex="-1">${category.question}</h2><p>${category.id==='person'?'좋아하는 사람 한 명을 눌러 주세요.':'좋아하는 '+category.name+' 하나를 눌러 주세요.'}</p></div><button class="text-button" id="back">번호 다시 고르기</button></div><div class="food-grid">${category.items.map(item=>`<button class="food ${selected===item.id?'selected':''}" data-choice="${item.id}" aria-pressed="${selected===item.id}">${art(item)}<strong>${item.name}</strong><span class="check" aria-hidden="true">✓</span></button>`).join('')}</div><div class="panel-bottom"><span class="selection-hint" id="selection-hint">${selected?`${itemFor(category.id,selected).name}, 좋아요!`:'하나를 고르고 선택 버튼을 눌러요.'}</span><button class="primary" id="confirm" ${selected?'':'disabled'}>${category.id==='food'?'이 음식으로 선택':category.id==='toy'?'이 장난감으로 선택':'이 사람으로 선택'}</button></div>`;
+  }else{
+    $('panel').innerHTML=`<div class="panel-heading"><span class="success-mark" aria-hidden="true">✓</span><h2 id="screen-title" tabindex="-1">우리가 좋아하는 것들이에요!</h2><p>1번부터 6번까지, 음식 · 장난감 · 사람을 함께 봐요.</p></div><div class="results-grid">${answers.map((answer,i)=>`<article class="student-result"><h3>${i+1}번 친구</h3>${categories.map((c,index)=>{const item=itemFor(c.id,answer[c.id]);return `<div class="result-row">${art(item,'result-art')}<div><span class="result-label">좋아하는 ${c.name}</span><strong>${item.name}</strong></div><button class="result-change" data-student="${i}" data-edit="${index}" aria-label="${i+1}번 ${c.name} 바꾸기">바꾸기</button></div>`;}).join('')}</article>`).join('')}</div><div class="panel-bottom"><button class="secondary" id="back">번호 화면으로</button><button class="primary" id="print">결과 인쇄하기</button></div>`;
+  }
+  if(focus){$('screen-title').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});}
+}
+$('panel').addEventListener('click',e=>{
+  const button=e.target.closest('button');if(!button)return;
+  if(button.dataset.student!==undefined){student=Number(button.dataset.student);const missing=categories.findIndex(c=>!answers[student][c.id]);startCategory(button.dataset.edit!==undefined?Number(button.dataset.edit):missing<0?0:missing);}
+  else if(button.dataset.category!==undefined){startCategory(Number(button.dataset.category));}
+  else if(button.dataset.choice){selected=button.dataset.choice;document.querySelectorAll('[data-choice]').forEach(b=>{const match=b.dataset.choice===selected;b.classList.toggle('selected',match);b.setAttribute('aria-pressed',match);});$('confirm').disabled=false;const name=itemFor(categories[categoryIndex].id,selected).name;$('selection-hint').textContent=`${name}, 좋아요!`;say(name);}
+  else if(button.id==='confirm'&&selected){
+    const category=categories[categoryIndex];
+    answers=choose(answers,student,category.id,selected);save();
+    const name=itemFor(category.id,selected).name;
+    const missing=categories.findIndex(c=>!answers[student][c.id]);
+    if(missing>=0){startCategory(missing);say(`${name} 선택! ${categories[missing].question}`);}
+    else{const number=student+1;screen=isComplete(answers)?'results':'numbers';student=null;selected=null;render(true);say(`${number}번 친구가 세 가지를 모두 골랐어요. ${screen==='results'?'모두의 선택을 함께 봐요.':'다음 친구의 번호를 골라 주세요.'}`);}
+  }
+  else if(button.id==='back'){screen='numbers';student=null;selected=null;render(true);}
+  else if(button.id==='show-results'&&isComplete(answers)){screen='results';render(true);}
+  else if(button.id==='print'){window.print();}
+});
+$('sound').addEventListener('click',()=>{sound=!sound;$('sound').setAttribute('aria-pressed',sound);$('sound').innerHTML=`<span aria-hidden="true">♫</span> 읽어주기 ${sound?'켜짐':'꺼짐'}`;if(sound)say('읽어주기를 켰어요.');else if('speechSynthesis'in window)speechSynthesis.cancel();});
+if(!('speechSynthesis'in window)){$('sound').disabled=true;$('sound').textContent='읽어주기 미지원';}
+$('reset').addEventListener('click',()=>$('reset-dialog').showModal());
+$('cancel-reset').addEventListener('click',()=>$('reset-dialog').close());
+$('confirm-reset').addEventListener('click',()=>{answers=restore(null);student=null;selected=null;screen='numbers';categoryIndex=0;save();$('reset-dialog').close();render(true);say('새로 시작해요. 내 번호를 골라 주세요.');});
+render();
+
+})();
+</script>
+</body></html>

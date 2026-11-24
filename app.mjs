@@ -8,6 +8,7 @@ function toast(message) { $('toast').textContent=message; $('toast').hidden=fals
 function load(key,fallback=[]) { try{return readStored(localStorage.getItem(`lumos:${key}`),fallback);}catch{return fallback;} }
 function persist(key,value) { try{localStorage.setItem(`lumos:${key}`,JSON.stringify(value));return true;}catch{toast('브라우저 저장 공간을 사용할 수 없습니다. 변경 사항은 이번 화면에서만 유지됩니다.');return false;} }
 const builtins=[
+ {id:'favorite-things',title:'내가 좋아하는 것 고르기',description:'1~6번 친구가 좋아하는 음식·장난감·사람을 그림으로 골라요. 각각 10가지 선택지와 친구들의 전체 결과를 함께 볼 수 있어요.',category:'수업 도구',type:'로그인 없이',icon:'spark',color:'',href:'./games/favorite-things.html',note:'음식 · 장난감 · 사람'},
  {id:'schedule',title:'하루를 여는 시각 일정판',description:'지금 할 일, 다음 할 일을 한눈에. 예측 가능한 하루로 아이의 편안한 시작을 도와요.',category:'수업 도구',type:'로그인 없이',icon:'clock',color:'',href:'#schedule',note:'이 기기에 저장'},
  {id:'diary',title:'교사의 일기장',description:'수업 속 작은 발견과 선생님의 마음을 기록해요. 나만의 조용한 성찰 공간입니다.',category:'교사 기록',type:'Google 로그인',icon:'book',color:'purple',href:'#diary',note:cloud.configured?'나만 보는 클라우드 기록':'클라우드 연결 준비 중'}
 ];
