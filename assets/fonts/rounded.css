@@ -1,0 +1,40 @@
+/* NanumSquareRound by NAVER. Distributed under SIL OFL 1.1, see OFL.txt. */
+@font-face {
+  font-family: 'NanumSquareRound';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./NanumSquareRoundB.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'NanumSquareRound';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./NanumSquareRoundEB.woff2') format('woff2');
+}
+
+:root {
+  --font-rounded: 'NanumSquareRound', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-rounded);
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: 800;
+}
