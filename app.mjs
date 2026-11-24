@@ -8,6 +8,7 @@ function toast(message) { $('toast').textContent=message; $('toast').hidden=fals
 function load(key,fallback=[]) { try{return readStored(localStorage.getItem(`lumos:${key}`),fallback);}catch{return fallback;} }
 function persist(key,value) { try{localStorage.setItem(`lumos:${key}`,JSON.stringify(value));return true;}catch{toast('브라우저 저장 공간을 사용할 수 없습니다. 변경 사항은 이번 화면에서만 유지됩니다.');return false;} }
 const builtins=[
+ {id:'neighborhood-move-shops',title:'우리동네가게옮기기',description:'우리 동네 가게를 주제로 수업할 때 활용하는 프로그램입니다. Claude 학습 화면을 새 창에서 열어요.',category:'수업 도구',type:'Claude 학습 도구',icon:'spark',color:'',href:'https://claude.ai/artifact/QrGBCuv5gw292KjrzxzRqx',external:true,note:'새 창에서 열림'},
  {id:'neighborhood-where-to-live',title:'우리동네 어디에서 살까요',description:'우리 동네를 주제로 수업할 때 활용하는 프로그램입니다. Claude 학습 화면을 새 창에서 열어요.',category:'수업 도구',type:'Claude 학습 도구',icon:'spark',color:'',href:'https://claude.ai/artifact/RdSCJ2dMBoo6SzGrMGs7ti',external:true,note:'새 창에서 열림'},
  {id:'canva-addition-subtraction',title:'특수학교 수업 덧셈·뺄셈 프로그램',description:'특수학교 수업에서 활용하는 덧셈·뺄셈 프로그램입니다. Canva 학습 화면을 새 창에서 열어요.',category:'수업 도구',type:'Canva 학습 도구',icon:'spark',color:'',href:'https://xn--1-10-9q5pt47c8vnxfkih0b.my.canva.site/dahaxuxsife',external:true,note:'새 창에서 열림'},
  {id:'favorite-things',title:'내가 좋아하는 것 고르기',description:'1~6번 친구가 좋아하는 음식·장난감·사람을 그림으로 골라요. 각각 10가지 선택지와 친구들의 전체 결과를 함께 볼 수 있어요.',category:'수업 도구',type:'로그인 없이',icon:'spark',color:'',href:'./games/favorite-things.html',note:'음식 · 장난감 · 사람'},
